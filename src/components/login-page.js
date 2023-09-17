@@ -1,5 +1,5 @@
 export const LoginPage =()=>{
-    return <div>
+    return <div >
         Tap hear to login
     </div>
 }

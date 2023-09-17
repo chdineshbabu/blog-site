@@ -2,7 +2,6 @@ import {getDocs, collection} from 'firebase/firestore'
 import { db } from '../../config/firebase'
 import { useEffect, useState } from 'react'
 import { Post } from './post'
-import { PostPage } from './post-page'
 import './post.css'
 
 export const Main =() =>{
@@ -16,7 +15,7 @@ export const Main =() =>{
         getPosts();
     }, [])
 
- return <div className='main'>
+ return <div className='px-5 md:px-36 py-16 gap-10 grid grid-cols-1 md:grid-cols-2'>
  {postsList?.map((post)=> <Post post={post}/>)}
     </div>
 }

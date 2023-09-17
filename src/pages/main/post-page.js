@@ -23,13 +23,15 @@ export const PostPage = ()=>{
 
 
  return<div>
- <div>
- <Link className='blogItem' to={`/`}>
- <img src={back} />
+ <div className="hidden md:fixed md:top-2 md:left-32">
+ <Link className='' to={`/`}>
+ <img className="w-16" src={back} />
         </Link>
  </div>
- <h1>{postData?.title}</h1>
- <p>{postData?.description}</p>
- <p>@{postData?.username}</p>
+ <div className="px-0 md:px-32 py-16">
+ <h1 className="text-center font-semibold text-2xl md:text-5xl">{postData?.title}</h1>
+ <p className="px-5 md:px-16 py-8 leading-relaxed indent-5 md:indent-16">{postData?.description}</p>
+ <p className="text-end px-5 md:px-16">@{postData?.username}</p>
+ </div>
  </div>
 }

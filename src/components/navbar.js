@@ -4,9 +4,6 @@ import {useAuthState} from 'react-firebase-hooks/auth'
 import { signOut } from "firebase/auth"
 import logout from './logout.png'
 
-import '../App.css'
-
-
 export const Navbar=()=>{
 
     const [ user ] = useAuthState(auth);
@@ -14,23 +11,23 @@ export const Navbar=()=>{
         await signOut(auth);
     }
 
-    return <div className="navbar">
-    <Link className="navlink" to='/' >Home</Link>
+    return <div className="px-0 md:px-40 py-5 items-center justify-center md:justify-end space-x-8 flex">
+    <Link className="font-semibold underline" to='/' >Home</Link>
     {!user ? (
-        <Link className="navlink" to="/login" >Login</Link>
+        <Link className="font-semibold" to="/login" >Login</Link>
     ):(
-        <Link className="navlink" to="/createpost" >Createpost</Link>
+        <Link className="font-semibold" to="/createpost" >Createpost</Link>
     )}
     
  
 
-    <div className="user">
+    <div className="flex items-center">
     {
         user && (
             <>
-        <p className="user_para">{user?.displayName}</p>
-        <img className="user_img" src={user?.photoURL} />
-        <button className="user_btn" onClick={signUserOut} >Sign Out</button>
+        <p className="font-semibold">{user?.displayName}</p>
+        <img className="w-10 rounded-full" src={user?.photoURL} />
+       {/* <button className="font-semibold" onClick={signUserOut} >Sign Out</button>*/}
             </>
         )
     }

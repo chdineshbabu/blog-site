@@ -1,5 +1,4 @@
 
-import './App.css';
 import {BrowserRouter as Router , Route,Routes} from 'react-router-dom'
 import { Main } from './pages/main/main';
 import { Login } from './pages/login';
@@ -13,6 +12,7 @@ function App() {
     <div className="App">
       <Router>
       <Navbar />
+      <div className='w-[100%] md:w-[100%] h-1 bg-secondary drop-shadow-lg'></div>
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/login' element={<Login />} />
